@@ -39,3 +39,4 @@ Veckovis planering med veckovisa milstolpar. Om vi hamnar efter har vi utrymme a
 **Underskrivet av**
 @julia-lundbergish
 @gabriel-yagoub
+@filippasoderlund
