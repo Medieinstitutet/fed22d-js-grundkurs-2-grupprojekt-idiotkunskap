@@ -19,14 +19,16 @@ Vi siktar mot ett VG i första hand.
 Begränsad erfarenhet inom javascript. Förkunskaper inom HTML5 och CSS finns. 
 
 **Kul & tråkigt**
-Det visuella är kul, även UX-aspekter. Struktur är kul. Tråkiga saker är att känna att man inte kan eller förstår det man gör och konflikt (både i kod och personkemi).
+Det visuella är kul, även UX-aspekter. Struktur är kul. Att jobba i grupp är kul. Tråkiga saker är att känna att man inte kan eller förstår det man gör och konflikt (både i kod och personkemi).
 
-vilken linting- och prettier-konfiguration ni kör
+**Linting- och prettier-konfiguration**
+Samtliga gruppmedlemmar kör grundkonfiguration av prettier och ESLint. 
 
 **Commit-meddelanden**
 Vi skriver commit-meddelanden så beskrivande som möjligt - vi ska använda rätt begrepp så att alla förstår vilken del det är som man arbetat med. Vi commitar en del i taget - inte flera samtidigt. Vi commitar när vi är klara (helt eller för dagen). 
 
-hur, när och vem gör code reviews/merges - när får man merge:a in i branchen? (föreslår att ni inte väljer "när du är klar", utan ni bör testa/kontrollera att det även fungerar på någon annans dator)
+**Merges**
+Vi delar upp olika funktioner i olika branches - när man är klar med en del/funktion merge:ar man med mainbranchen. Vi löser konflikter i koden på egen hand i första hand, om det är problem hjälps vi åt. 
 
 **Att göra**
 Att göra-listan fylls på varje måndag och betas av under veckan. 
@@ -34,4 +36,5 @@ Att göra-listan fylls på varje måndag och betas av under veckan.
 **Planering och milstolpar**
 Veckovis planering med veckovisa milstolpar. Om vi hamnar efter har vi utrymme att lägga in extra möten, och den veckovisa planeringen säkerställer att vi märker det i tid och kan anpassa oss.
 
-När ni fått ordning på ovan för att säkerställa ett bra grupparbete under fyra veckor, så gör var och en, en commit till denna fil med sin underskrift.
+**Underskrivet av**
+@julia-lundbergish
