@@ -78,7 +78,7 @@ function checkAnswer(e) {
   // vilken som är den aktuella frågan
   //varför -1: - 1 för att vi i nextQuestion har redan "gått vidare" till nästa fråga
   // så vi vill ha rätt svar för föregående fråga
-  const correctAnswer = questions1[currentQuestion - 1].correctAnswer;
+  const correctAnswer = questions[currentQuestion - 1].correctAnswer;
   if (userAnswer === correctAnswer) { // jämföra frågans rätt svar med tryckt knapp
     // ge ett poäng!
     points++;
@@ -89,16 +89,16 @@ function checkAnswer(e) {
 }
 
 function nextQuestion() {
-  if (currentQuestion >= questions1.length) { // > =
+  if (currentQuestion >= questions.length) { // > =
     gameOver();
     return;
   }
 
-  questionTextDiv.innerHTML = questions1[currentQuestion].questionText;
-  answer1Btn.innerHTML = questions1[currentQuestion].answerOptions[0];
-  answer2Btn.innerHTML = questions1[currentQuestion].answerOptions[1];
-  answer3Btn.innerHTML = questions1[currentQuestion].answerOptions[2];
-  answer4Btn.innerHTML = questions1[currentQuestion].answerOptions[3];
+  questionTextDiv.innerHTML = questions[currentQuestion].questionText;
+  answer1Btn.innerHTML = questions[currentQuestion].answerOptions[0];
+  answer2Btn.innerHTML = questions[currentQuestion].answerOptions[1];
+  answer3Btn.innerHTML = questions[currentQuestion].answerOptions[2];
+  answer4Btn.innerHTML = questions[currentQuestion].answerOptions[3];
 
   currentQuestion++; // += 1, currentQuestion = currentQuestion + 1;
 }
