@@ -6,7 +6,7 @@
 //import { shuffle } from './utils.js';
 
 // I denna fil har vi lagrat vår "data", i detta exempel en ofullständig kortlek
-import questions1 from './questionsArray.js';
+import questions from './questionsArray.js';
 
 //Nedan har vi starta spelfunktionen där vi väljer kategori och skriver in smeknamn
 
