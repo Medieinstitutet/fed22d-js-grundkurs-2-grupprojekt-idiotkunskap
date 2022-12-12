@@ -6,34 +6,81 @@ import './style/style.scss';
 import { shuffle } from './utils';
 
 // I denna fil har vi lagrat vår "data", i detta exempel en ofullständig kortlek
-import exampleCardDeck from './exampleArray';
+import exampleCardDeck from './questionsArray';
 
-// Blanda kortleken
-const myShuffledCardDeck = shuffle(exampleCardDeck);
+document.querySelector('#startGameBtn').addEventListener('click', startGame);
 
-/**
- * Vänder upp/ner på det klickade kortet genom att toggla en CSS-klass.
- * @param this - Det HTML-element som har klickats på
- * @return {void}
- */
-function flipCard(this: HTMLElement): void {
-  if (this !== undefined) {
-    this.classList.toggle('visible');
-  }
+let playerName = '';
+
+function startGame() {
+  console.log('startGame');
+  // Spara spelarens nick
+  playerName = document.querySelector('#playerNameInput').value;
+  
+  // Dölj HTML-elementen
+  gameDescription.style.display = 'none';
+  document.querySelector('#playerDetails').style.display = 'none';
+
+  nextQuestion();
 }
 
-// Printa kortleken
-let cardString = '';
-myShuffledCardDeck.forEach((card) => {
-  cardString += `
-    <button class="card">
-      <span class="front">♠</span>
-      <span class="back">${card}</span>
-    </button>`;
-});
+const questionTextDiv = document.querySelector('#questionText');
+const answer1Btn = document.querySelector('#answer1');
+const answer2Btn = document.querySelector('#answer2');
+const answer3Btn = document.querySelector('#answer3');
+const answer4Btn = document.querySelector('#answer4');
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = cardString;
+answer1Btn.addEventListener('click', checkAnswer);
+answer2Btn.addEventListener('click', checkAnswer);
+answer3Btn.addEventListener('click', checkAnswer);
+answer4Btn.addEventListener('click', checkAnswer);
 
-document.querySelectorAll('.card').forEach((card) => {
-  card.addEventListener('click', flipCard);
-});
+let currentQuestion = 0;
+let points = 0;
+
+function checkAnswer(e) {
+  const userAnswer = e.currentTarget.innerHTML; // vilket svarsalternativ
+  // vilken som är den aktuella frågan
+  //varför -1: - 1 för att vi i nextQuestion har redan "gått vidare" till nästa fråga
+  // så vi vill ha rätt svar för föregående fråga
+  const correctAnswer = questions[currentQuestion - 1].correctAnswer;
+  if (userAnswer === correctAnswer) { // jämföra frågans rätt svar med tryckt knapp
+    // ge ett poäng!
+    points++;
+  } else {
+    // ge minus
+  }
+  nextQuestion();
+}
+
+function nextQuestion() {
+  if (currentQuestion >= questions.length) { // > =
+    gameOver();
+    return;
+  }
+
+  questionTextDiv.innerHTML = questions[currentQuestion].questionText;
+  answer1Btn.innerHTML = questions[currentQuestion].answerOptions[0];
+  answer2Btn.innerHTML = questions[currentQuestion].answerOptions[1];
+  answer3Btn.innerHTML = questions[currentQuestion].answerOptions[2];
+  answer4Btn.innerHTML = questions[currentQuestion].answerOptions[3];
+
+  currentQuestion++; // += 1, currentQuestion = currentQuestion + 1;
+}
+
+document.querySelector('#restartGameBtn').addEventListener('click', restartGame);
+
+function restartGame() {
+  document.querySelector('#gameOver').style.display = 'none';
+  document.querySelector('#questionContainer').classList.remove('hidden');
+  currentQuestion = 0;
+  points = 0;
+  nextQuestion();
+}
+
+function gameOver() {
+  document.querySelector('#gameOver').style.display = 'block';
+  document.querySelector('#questionContainer').classList.add('hidden');
+  document.querySelector('#pointsContainer').innerHTML = `Du fick ${points} poäng!`;
+  // document.querySelector('#gameOver').classList.toggle('hidden');
+}

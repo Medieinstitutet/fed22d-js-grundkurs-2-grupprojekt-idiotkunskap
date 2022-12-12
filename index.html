@@ -1,36 +1,50 @@
 <!DOCTYPE html>
-<html lang="en"> <!-- TODO: glöm ej att byta språk här -->
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/ico" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projekt</title>
+    <title>Idiotkunskap</title>
   </head>
   <body>
     <main>
       <div class="app" id="app"></div> <!-- TODO: går bra att radera -->
       <!-- TODO: skriv din kod här, innan script-taggen -->
 
-      <h1>Quiz</h1>
-      <div id="gameDescription"></div>
-      
+      <h1>Idiotkunskap</h1>
+      <div id="gameDescription">
+        <p>Det här är spelet om allt det där man inte fick lära sig i skolan. Över 40 totalt meningslösa men ändå superintressanta och underhållande frågor som är lika kul att kunna svara på som att höra svaret på! Välj en kategori, skriv in ett smeknamn och börja spela.</p>
+      </div>
+
+      <div id="gameCategories">
+        <button>Kategori 1</button>
+        <button>Kategori 2</button>
+      </div>
+ 
       <div id="playerDetails">
         <label>
-          Ditt namn: <input type="text" id="playerNameInput" value="Jenni">
+          Skriv ett smeknamn: <input type="text" id="playerNameInput" value="Smeknamn">
         </label>
         <button id="startGameBtn">Starta spelet</button>
       </div>
       
       <div id="questionContainer">
+        <div id="timer">Timer</div>
         <div id="questionText"></div>
         <button id="answer1"></button>
         <button id="answer2"></button>
         <button id="answer3"></button>
+        <button id="answer4"></button>
+        <button id="nextQuestion">Svara</button>
       </div>
       
       <div id="gameOver" class="hidden">
-        Spelet är slut!
-        <p id="pointsContainer"></p>
+        Tiden är ute!
+        <p id="pointsContainer">Ditt resultat: </p>
+        <div id="scoreBoard">
+          <h5>Highscore</h5>
+          <!-- Poänglista från local storage -->
+        </div>
         <p>
           <button id="restartGameBtn">Spela igen</button>
         </p>
