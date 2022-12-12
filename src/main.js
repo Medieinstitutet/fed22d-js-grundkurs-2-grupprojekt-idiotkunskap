@@ -8,6 +8,8 @@ import { shuffle } from './utils';
 // I denna fil har vi lagrat vår "data", i detta exempel en ofullständig kortlek
 import exampleCardDeck from './questionsArray';
 
+//Nedan har vi starta spelfunktionen där vi väljer kategori och skriver in smeknamn
+
 document.querySelector('#startGameBtn').addEventListener('click', startGame);
 
 let playerName = '';
