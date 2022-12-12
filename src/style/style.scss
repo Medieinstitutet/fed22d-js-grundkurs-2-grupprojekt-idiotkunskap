@@ -1,5 +1,5 @@
-@use "utils/a11y"; // Om det inte funkar, byt @use mot @import
-@use "vendor/reset";
+@import "utils/a11y"; // Om det inte funkar, byt @use mot @import
+@import "vendor/reset";
 
 :root {
   // TODO: Går bra att radera kod även här!

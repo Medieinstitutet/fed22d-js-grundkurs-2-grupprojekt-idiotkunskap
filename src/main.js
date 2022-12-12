@@ -1,23 +1,52 @@
-import './style/style.scss';
+//import './style';
 
 // All kod härifrån och ner är bara ett exempel för att komma igång
 
 // I denna utils-fil har vi lagrat funktioner som ofta används, t.ex. en "blanda array"-funktion
-import { shuffle } from './utils';
+//import { shuffle } from './utils.js';
 
 // I denna fil har vi lagrat vår "data", i detta exempel en ofullständig kortlek
-import exampleCardDeck from './questionsArray';
+import questions1 from './questionsArray.js';
 
 //Nedan har vi starta spelfunktionen där vi väljer kategori och skriver in smeknamn
 
 document.querySelector('#startGameBtn').addEventListener('click', startGame);
 
+const categoryOneBtn = document.querySelector('#categoryOne');
+const categoryTwoBtn = document.querySelector('#categoryTwo');
+
+categoryOneBtn.addEventListener('click', checkCategory);
+categoryTwoBtn.addEventListener('click', checkCategory);
+
 let playerName = '';
+let categoryChoice = true;
+
+function checkCategory() {
+  if(document.getElementById('categoryOne').checked == true) {   
+    categoryChoice = true;
+    console.log('categoriOne');   
+  } else {  
+    categoryChoice = false;
+    console.log('categoriTwo');    
+  }  
+}
+
+//TODO
+
+/**
+ * Dölj html element vid start av spel
+ * Check av namn och kategori för start av namn
+ * Radiobtn/categori ska starta utan värde samt endast en vald. 
+ */
 
 function startGame() {
+ 
+  checkCategory();
+
   console.log('startGame');
   // Spara spelarens nick
   playerName = document.querySelector('#playerNameInput').value;
+  console.log(playerName);
   
   // Dölj HTML-elementen
   gameDescription.style.display = 'none';
@@ -25,6 +54,8 @@ function startGame() {
 
   nextQuestion();
 }
+
+//Nedan kommer frågorna och svaren samt poängräkning
 
 const questionTextDiv = document.querySelector('#questionText');
 const answer1Btn = document.querySelector('#answer1');
