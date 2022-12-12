@@ -53,6 +53,9 @@ function startGame() {
   // Dölj HTML-elementen
   gameDescription.style.display = 'none';
   document.querySelector('#playerDetails').style.display = 'none';
+  document.querySelector('#gameCategories').style.display = 'none';
+  document.querySelector('#gameOver').style.display = 'none';
+
 
   nextQuestion();
 }
