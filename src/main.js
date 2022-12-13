@@ -67,16 +67,20 @@ const answer1Btn = document.querySelector('#answer1');
 const answer2Btn = document.querySelector('#answer2');
 const answer3Btn = document.querySelector('#answer3');
 const answer4Btn = document.querySelector('#answer4');
+const nextQuestionBtn = document.querySelector('#nextQuestion');
 
-answer1Btn.addEventListener('click', checkAnswer);
-answer2Btn.addEventListener('click', checkAnswer);
-answer3Btn.addEventListener('click', checkAnswer);
-answer4Btn.addEventListener('click', checkAnswer);
+answer1Btn.addEventListener('click', checkClickedAnswer);
+answer2Btn.addEventListener('click', checkClickedAnswer);
+answer3Btn.addEventListener('click', checkClickedAnswer);
+answer4Btn.addEventListener('click', checkClickedAnswer);
+
+nextQuestionBtn.addEventListener('click', checkAnswer);
+
 
 let currentQuestion = 0;
 let points = 0;
 
-function checkAnswer(e) {
+function checkClickedAnswer(e){
   const userAnswer = e.currentTarget.innerHTML; // vilket svarsalternativ
   // vilken som är den aktuella frågan
   //varför -1: - 1 för att vi i nextQuestion har redan "gått vidare" till nästa fråga
@@ -88,6 +92,9 @@ function checkAnswer(e) {
   } else {
     // ge minus
   }
+}
+
+function checkAnswer(e) {
   nextQuestion();
 }
 
