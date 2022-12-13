@@ -73,13 +73,13 @@ answer1Btn.addEventListener('click', checkClickedAnswer);
 answer2Btn.addEventListener('click', checkClickedAnswer);
 answer3Btn.addEventListener('click', checkClickedAnswer);
 answer4Btn.addEventListener('click', checkClickedAnswer);
-
 nextQuestionBtn.addEventListener('click', checkAnswer);
 
 
 let currentQuestion = 0;
 let points = 0;
 
+// Funktion för svarsalternativ
 function checkClickedAnswer(e){
   const userAnswer = e.currentTarget.innerHTML; // vilket svarsalternativ
   // vilken som är den aktuella frågan
@@ -94,6 +94,7 @@ function checkClickedAnswer(e){
   }
 }
 
+// Funktion för svara-knappen
 function checkAnswer(e) {
   nextQuestion();
 }
@@ -117,10 +118,9 @@ document.querySelector('#restartGameBtn').addEventListener('click', restartGame)
 
 function restartGame() {
   document.querySelector('#gameOver').style.display = 'none';
-  document.querySelector('#questionContainer').classList.remove('hidden');
+  document.querySelector('#questionContainer').classList.add('hidden');
   currentQuestion = 0;
   points = 0;
-  nextQuestion();
 }
 
 function gameOver() {
