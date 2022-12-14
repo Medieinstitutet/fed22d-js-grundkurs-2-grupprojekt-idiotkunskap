@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/ico" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Julius+Sans+One&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Idiotkunskap</title>
   </head>
@@ -11,26 +12,29 @@
       <div class="app" id="app"></div> <!-- TODO: går bra att radera -->
       <!-- TODO: skriv din kod här, innan script-taggen -->
 
-    <div id="firstPage">
+
+      <div id="firstPage" class="firstPage">
       <h1>Idiotkunskap</h1>
       <div id="gameDescription">
         <p>Det här är spelet om allt det där man inte fick lära sig i skolan. Över 40 totalt meningslösa men ändå superintressanta och underhållande frågor som är lika kul att kunna svara på som att höra svaret på! Välj en kategori, skriv in ett smeknamn och börja spela.</p>
       </div>
 
       <div id="gameCategories">
-        <input type="radio" name="category" id="categoryOne">Kategori 1</input>
-        <input type="radio" name="category" id="categoryTwo">Kategori 2</input>
+        <input type="radio" name="category" id="categoryOne"></input>
+        <label for="categoryOne">Kategori 1</label>
+        <input type="radio" name="category" id="categoryTwo"></input>
+        <label for="categoryTwo">Kategori 2</label>
       </div>
  
       <div id="playerDetails">
         <label>
-          Skriv ett smeknamn: <input type="text" id="playerNameInput" value="Smeknamn">
-        </label>
+          Skriv ett smeknamn: <br><input type="text" id="playerNameInput" value="Smeknamn">
+        </label><br>
         <button id="startGameBtn">Starta spelet</button>
       </div>
     </div>
       
-      <div id="questionContainer">
+      <div id="questionContainer" class="questionContainer">
         <div id="timer">Timer</div>
         <div id="questionText"></div>
         <button id="answer1"></button>
@@ -40,7 +44,7 @@
         <button id="nextQuestion">Svara</button>
       </div>
       
-      <div id="gameOver" class="hidden">
+      <div id="gameOver" class="lastPage">
         Tiden är ute!
         <p id="pointsContainer">Ditt resultat: </p>
         <div id="scoreBoard">

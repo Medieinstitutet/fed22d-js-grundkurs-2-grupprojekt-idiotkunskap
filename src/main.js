@@ -1,4 +1,4 @@
-//import './style';
+import './style/style.scss';
 
 // All kod härifrån och ner är bara ett exempel för att komma igång
 
@@ -23,6 +23,9 @@ categoryTwoBtn.addEventListener('click', checkCategory);
 let playerName = '';
 let categoryChoice = '';
 
+document.querySelector('#firstPage').classList.remove('firstPage');
+
+
 function checkCategory() {
   if(document.getElementById('categoryOne').checked == true) {   
     categoryChoice = true;
@@ -33,10 +36,22 @@ function checkCategory() {
   }  
 }
 
+// Blanda frågor (endast ett hopp)
+const shuffledArray = questions.sort((a, b) => 0.5 - Math.random());
+
+// Slumpar frågor - får ej till
+/* const shuffleArray = array => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+} */ 
+
 //TODO
 
 /**
- * Dölj html element vid start av spel
  * Check av namn och kategori för start av namn
  * Radiobtn/categori ska starta utan värde samt endast en vald. 
  */
@@ -68,6 +83,8 @@ function startGame() {
   document.querySelector('#gameOver').style.display = 'none';
   document.querySelector('#questionContainer').style.display = 'block';
 
+  // Visa question container
+  document.querySelector('#questionContainer').classList.remove('questionContainer');
 
   nextQuestion();
 }
@@ -130,11 +147,13 @@ document.querySelector('#restartGameBtn').addEventListener('click', restartGame)
 
 function restartGame() {
   document.querySelector('#gameOver').style.display = 'none';
+
   //document.querySelector('#questionContainer').classList.add('hidden');
   //document.querySelector('#questionContainer').display = 'hidden';
   currentQuestion = 0;
   points = 0;
   startScreen();
+
 }
 
 function gameOver() {
