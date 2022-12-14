@@ -36,8 +36,18 @@ function checkCategory() {
   }  
 }
 
-// Blanda frågor
+// Blanda frågor (endast ett hopp)
 const shuffledArray = questions.sort((a, b) => 0.5 - Math.random());
+
+// Slumpar frågor - får ej till
+/* const shuffleArray = array => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+} */ 
 
 //TODO
 
