@@ -1,4 +1,4 @@
-//import './style';
+import './style/style.scss';
 
 // All kod härifrån och ner är bara ett exempel för att komma igång
 
@@ -22,6 +22,9 @@ categoryTwoBtn.addEventListener('click', checkCategory);
 
 let playerName = '';
 let categoryChoice = '';
+
+document.querySelector('#firstPage').classList.remove('firstPage');
+
 
 function checkCategory() {
   if(document.getElementById('categoryOne').checked == true) {   
@@ -56,6 +59,8 @@ function startGame() {
   document.querySelector('#gameCategories').style.display = 'none';
   document.querySelector('#gameOver').style.display = 'none';
 
+  // Visa question container
+  document.querySelector('#questionContainer').classList.remove('questionContainer');
 
   nextQuestion();
 }
@@ -119,13 +124,18 @@ document.querySelector('#restartGameBtn').addEventListener('click', restartGame)
 function restartGame() {
   document.querySelector('#gameOver').style.display = 'none';
   document.querySelector('#questionContainer').classList.add('hidden');
+  document.querySelector('#questionContainer').classList.add('hidden');
+  document.querySelector('#firstPage').classList.remove('firstPage');
+  
+
   currentQuestion = 0;
   points = 0;
+
 }
 
 function gameOver() {
   document.querySelector('#gameOver').style.display = 'block';
-  document.querySelector('#questionContainer').classList.add('hidden');
+  document.querySelector('#questionContainer').classList.add('questionContainer');
   document.querySelector('#pointsContainer').innerHTML = `Du fick ${points} poäng!`;
   // document.querySelector('#gameOver').classList.toggle('hidden');
 }
