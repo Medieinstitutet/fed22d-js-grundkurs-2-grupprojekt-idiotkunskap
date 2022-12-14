@@ -56,20 +56,32 @@ const shuffledArray = questions.sort((a, b) => 0.5 - Math.random());
  * Radiobtn/categori ska starta utan värde samt endast en vald. 
  */
 
-function startGame() {
- 
+function startScreen() {
+  gameDescription.style.display = 'block';
+  document.querySelector('#playerDetails').style.display = 'block';
+  document.querySelector('#gameCategories').style.display = 'block';
+  document.querySelector('#gameOver').style.display = 'none';
+  document.querySelector('#questionContainer').style.display = 'none';
+  
   checkCategory();
-
+  
   console.log('startGame');
   // Spara spelarens nick
   playerName = document.querySelector('#playerNameInput').value;
   console.log(playerName);
+}
+
+startScreen();
+
+function startGame() {
+ 
   
   // Dölj HTML-elementen
   gameDescription.style.display = 'none';
   document.querySelector('#playerDetails').style.display = 'none';
   document.querySelector('#gameCategories').style.display = 'none';
   document.querySelector('#gameOver').style.display = 'none';
+  document.querySelector('#questionContainer').style.display = 'block';
 
   // Visa question container
   document.querySelector('#questionContainer').classList.remove('questionContainer');
@@ -135,19 +147,19 @@ document.querySelector('#restartGameBtn').addEventListener('click', restartGame)
 
 function restartGame() {
   document.querySelector('#gameOver').style.display = 'none';
-  document.querySelector('#questionContainer').classList.add('hidden');
-  document.querySelector('#questionContainer').classList.add('hidden');
-  document.querySelector('#firstPage').classList.remove('firstPage');
-  
 
+  //document.querySelector('#questionContainer').classList.add('hidden');
+  //document.querySelector('#questionContainer').display = 'hidden';
   currentQuestion = 0;
   points = 0;
+  startScreen();
 
 }
 
 function gameOver() {
   document.querySelector('#gameOver').style.display = 'block';
-  document.querySelector('#questionContainer').classList.add('questionContainer');
+  //document.querySelector('#questionContainer').classList.add('hidden');
   document.querySelector('#pointsContainer').innerHTML = `Du fick ${points} poäng!`;
   // document.querySelector('#gameOver').classList.toggle('hidden');
+  document.querySelector('#questionContainer').style.display = 'none';
 }
