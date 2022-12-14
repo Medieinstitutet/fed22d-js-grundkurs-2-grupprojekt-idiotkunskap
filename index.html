@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/ico" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Julius+Sans+One&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Idiotkunskap</title>
   </head>
@@ -18,14 +19,16 @@
       </div>
 
       <div id="gameCategories">
-        <input type="radio" name="category" id="categoryOne">Kategori 1</input>
-        <input type="radio" name="category" id="categoryTwo">Kategori 2</input>
+        <input type="radio" name="category" id="categoryOne"></input>
+        <label for="categoryOne">Kategori 1</label>
+        <input type="radio" name="category" id="categoryTwo"></input>
+        <label for="categoryTwo">Kategori 2</label>
       </div>
  
       <div id="playerDetails">
         <label>
-          Skriv ett smeknamn: <input type="text" id="playerNameInput" value="Smeknamn">
-        </label>
+          Skriv ett smeknamn: <br><input type="text" id="playerNameInput" value="Smeknamn">
+        </label><br>
         <button id="startGameBtn">Starta spelet</button>
       </div>
     </div>
