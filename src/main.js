@@ -36,10 +36,12 @@ function checkCategory() {
   }  
 }
 
+// Blanda frågor
+const shuffledArray = questions.sort((a, b) => 0.5 - Math.random());
+
 //TODO
 
 /**
- * Dölj html element vid start av spel
  * Check av namn och kategori för start av namn
  * Radiobtn/categori ska starta utan värde samt endast en vald. 
  */
