@@ -56,6 +56,9 @@ const shuffledArray = questions.sort((a, b) => 0.5 - Math.random());
  * Radiobtn/categori ska starta utan värde samt endast en vald. 
  */
 
+
+// Nedan är det första spelaren möts av. Det är även denna funktion som körs när man trycker på "restartGameBtn"
+
 function startScreen() {
   gameDescription.style.display = 'block';
   document.querySelector('#playerDetails').style.display = 'block';
@@ -147,7 +150,6 @@ document.querySelector('#restartGameBtn').addEventListener('click', restartGame)
 
 function restartGame() {
   document.querySelector('#gameOver').style.display = 'none';
-
   //document.querySelector('#questionContainer').classList.add('hidden');
   //document.querySelector('#questionContainer').display = 'hidden';
   currentQuestion = 0;
@@ -158,8 +160,6 @@ function restartGame() {
 
 function gameOver() {
   document.querySelector('#gameOver').style.display = 'block';
-  //document.querySelector('#questionContainer').classList.add('hidden');
   document.querySelector('#pointsContainer').innerHTML = `Du fick ${points} poäng!`;
-  // document.querySelector('#gameOver').classList.toggle('hidden');
   document.querySelector('#questionContainer').style.display = 'none';
 }
