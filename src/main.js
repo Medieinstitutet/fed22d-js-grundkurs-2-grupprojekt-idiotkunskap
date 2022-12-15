@@ -5,8 +5,11 @@ import './style/style.scss';
 // I denna utils-fil har vi lagrat funktioner som ofta används, t.ex. en "blanda array"-funktion
 //import { shuffle } from './utils.js';
 
-// I denna fil har vi lagrat vår "data", i detta exempel en ofullständig kortlek
+// I denna fil har vi lagrat vår "data"
 import questions from './questionsArray.js';
+
+// I denna fil har vi lagrat vår extra "data"
+import extraQuestions from './extraQuestions.js';
 
 //Nedan har vi starta spelfunktionen där vi väljer kategori och skriver in smeknamn
 
@@ -31,24 +34,22 @@ function checkCategory() {
   }  
 }
 
-// Blanda frågor (endast ett hopp)
-const shuffledArray = questions.sort((a, b) => 0.5 - Math.random());
+shuffle(questions);
 
-// Slumpar frågor - får ej till
-/* const shuffleArray = array => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
+//shuffla frågor
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
   }
-} */ 
+  return a;
+}
+
 
 //TODO
 
 /**
  * Check av namn och kategori för start av namn
- * Radiobtn/categori ska starta utan värde samt endast en vald. 
  */
 
 
