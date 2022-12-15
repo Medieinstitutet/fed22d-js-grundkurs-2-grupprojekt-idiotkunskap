@@ -17,7 +17,7 @@
   text-size-adjust: 100%;
 }
 
-// TODO: Radera mig! Jag är bara ett exempel.
+
 main {
   padding: 20px;
 }
@@ -32,6 +32,7 @@ h1{
   font-family: 'Julius Sans One', sans-serif;
   text-align: center;
   margin-top: 60px;
+  
 }
 
 #gameDescription{
@@ -90,11 +91,42 @@ h1{
   width: 100%;
   background-color: white;
   border: 2px solid #89C6FF;
+  
   font-family: 'Jost', sans-serif;
 }
 
 #playerDetails input{
   width: 100%;
+}
+
+#questionContainer{
+  text-align: center;
+  
+}
+
+#questionText{
+  font-size: 1.3rem;
+}
+
+#answer1, #answer2, #answer3, #answer4{
+  width: 140px;
+  height: 140px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 6px #d9d9d9;
+  border: solid 1px #d9d9d9;
+
+}
+
+#nextQuestion{
+  margin-top: 30px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 85%;
+  background-color: white;
+  border: 2px solid #89C6FF;
+  font-weight: bold;
 }
 
 .lastPage{
