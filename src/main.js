@@ -20,6 +20,8 @@ categoryOneBtn.addEventListener('click', checkCategory);
 categoryTwoBtn.addEventListener('click', checkCategory);
 */
 
+//Test
+
 let playerName = '';
 let categoryChoice = '';
 
