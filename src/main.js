@@ -15,11 +15,6 @@ document.querySelector('#startGameBtn').addEventListener('click', startGame);
 const categoryOneBtn = document.querySelector('#categoryOne');
 const categoryTwoBtn = document.querySelector('#categoryTwo');
 
-/*Nedan två rader kan raderas då funktionen "checkCategory" körs i funktionen "startGame"
-categoryOneBtn.addEventListener('click', checkCategory);
-categoryTwoBtn.addEventListener('click', checkCategory);
-*/
-
 let playerName = '';
 let categoryChoice = '';
 
@@ -60,6 +55,7 @@ const shuffledArray = questions.sort((a, b) => 0.5 - Math.random());
 // Nedan är det första spelaren möts av. Det är även denna funktion som körs när man trycker på "restartGameBtn"
 
 function startScreen() {
+  //document.getElementById("category").checked = false;
   gameDescription.style.display = 'block';
   document.querySelector('#playerDetails').style.display = 'block';
   document.querySelector('#gameCategories').style.display = 'block';
@@ -150,8 +146,8 @@ document.querySelector('#restartGameBtn').addEventListener('click', restartGame)
 
 function restartGame() {
   document.querySelector('#gameOver').style.display = 'none';
-  //document.querySelector('#questionContainer').classList.add('hidden');
-  //document.querySelector('#questionContainer').display = 'hidden';
+  document.getElementById("categoryOne").checked = false; // Tömmer kategorier vid omstart
+  document.getElementById("categoryTwo").checked = false; // Tömmer kategorier vid omstart
   currentQuestion = 0;
   points = 0;
   startScreen();
