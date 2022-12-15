@@ -9,30 +9,35 @@
   </head>
   <body>
     <main>
-      <div class="app" id="app"></div> <!-- TODO: går bra att radera -->
-      <!-- TODO: skriv din kod här, innan script-taggen -->
-
-
+      <div class="app" id="app"></div>
+      
+      <header>
+        <h4>Idiotkunskap</h4>
+        <p>Timer</p>
+      </header>
+      
       <div id="firstPage" class="firstPage">
-      <h1>Idiotkunskap</h1>
-      <div id="gameDescription">
-        <p>Det här är spelet om allt det där man inte fick lära sig i skolan. Över 40 totalt meningslösa men ändå superintressanta och underhållande frågor som är lika kul att kunna svara på som att höra svaret på! Välj en kategori, skriv in ett smeknamn och börja spela.</p>
+        <h1>Idiotkunskap</h1>
+        <div id="gameDescription">
+          <p>Det här är spelet om allt det där man inte fick lära sig i skolan. Över 40 totalt meningslösa men ändå
+            superintressanta och underhållande frågor som är lika kul att kunna svara på som att höra svaret på! Välj en
+            kategori, skriv in ett smeknamn och börja spela.</p>
+        </div>
+      
+        <div id="gameCategories">
+          <input type="radio" name="category" id="categoryOne"></input>
+          <label for="categoryOne">Kategori 1</label>
+          <input type="radio" name="category" id="categoryTwo"></input>
+          <label for="categoryTwo">Kategori 2</label>
+        </div>
+      
+        <div id="playerDetails">
+          <label>
+            Skriv ett smeknamn: <br><input type="text" id="playerNameInput" value="Smeknamn">
+          </label><br>
+          <button id="startGameBtn">Starta spelet</button>
+        </div>
       </div>
-
-      <div id="gameCategories">
-        <input type="radio" name="category" id="categoryOne"></input>
-        <label for="categoryOne">Kategori 1</label>
-        <input type="radio" name="category" id="categoryTwo"></input>
-        <label for="categoryTwo">Kategori 2</label>
-      </div>
- 
-      <div id="playerDetails">
-        <label>
-          Skriv ett smeknamn: <br><input type="text" id="playerNameInput" value="Smeknamn">
-        </label><br>
-        <button id="startGameBtn">Starta spelet</button>
-      </div>
-    </div>
       
       <div id="questionContainer" class="questionContainer">
         <div id="timer">Timer</div>
@@ -47,6 +52,7 @@
       <div id="gameOver" class="lastPage">
         Tiden är ute!
         <p id="pointsContainer">Ditt resultat: </p>
+        <button id="showCorrectAnswers">Visa frågor och svar</button>
         <div id="scoreBoard">
           <h5>Highscore</h5>
           <!-- Poänglista från local storage -->
@@ -55,7 +61,7 @@
           <button id="restartGameBtn">Spela igen</button>
         </p>
       </div>
-    </main>
+      </main>
 
     <!-- TODO
     - Validera HTML (kopiera den renderade HTML-koden): https://validator.w3.org/#validate_by_input
