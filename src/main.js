@@ -122,7 +122,6 @@ function checkClickedAnswer(e){
     // ge minus
     points -=1;
   }
-  console.log(points);
 }
 
 // Funktion för svara-knappen
