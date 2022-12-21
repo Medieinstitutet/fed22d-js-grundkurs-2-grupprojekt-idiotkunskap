@@ -3,16 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/ico" href="/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&family=Julius+Sans+One&display=swap" rel="stylesheet">    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&family=Julius+Sans+One&display=swap" rel="stylesheet">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Idiotkunskap</title>
   </head>
   <body>
     <main>
       <div class="app" id="app"></div>
       
-      <header>
+      <header id="header">
         <h4>Idiotkunskap</h4>
-        <p>Timer</p>
+        <div id="timer"><p>Timer</p></div>
       </header>
       
       <div id="firstPage" class="firstPage">
@@ -43,7 +46,6 @@
       </div>
       
       <div id="questionContainer" class="questionContainer">
-        <div id="timer">Timer</div>
         <div id="questionText"></div>
         <button id="answer1"></button>
         <button id="answer2"></button><br>
