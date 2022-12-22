@@ -22,9 +22,15 @@ main {
 
 // ----- Header -----
 
-
+header{
+  display: none;
+}
 
 // ----- Startskärm -----
+
+.displayNone{
+display: none;
+}
 
 #firstPage{
   h1{
@@ -65,18 +71,14 @@ main {
     position: fixed;
     width: 0;
   }
-  #categoryOneBtn input[type="radio"]:checked + label {
-    background-color:#89C6FF;
-    border: 2px solid #89C6FF;
-    box-shadow: 3px 3px 6px #d9d9d9;
-  }
+ 
   #categoryOneBtn input[type="radio"]:focus + label {
     border: 2px solid #89C6FF;
     box-shadow: 3px 3px 6px #d9d9d9;
     
   }
   #categoryOneBtn label:hover {
-    background-color: #dfd;
+    background-color: #89C6FF;
   }
   // Kategori 2 - knapp
   #categoryTwoBtn label {
@@ -134,9 +136,6 @@ main {
 
 // ----- Frågor -----
 
-.questionContainer{
-  display: none;
-}
 
 #questionContainer{
   text-align: center;
@@ -177,6 +176,4 @@ main {
 
 // ----- Sista sidan -----
 
-.lastPage{
-  display: none;
-}
+
