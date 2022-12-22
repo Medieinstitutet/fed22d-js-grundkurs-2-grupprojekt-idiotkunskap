@@ -1,4 +1,4 @@
-import './style/style.scss';
+//import './style/style.scss';
 
 // All kod härifrån och ner är bara ett exempel för att komma igång
 
@@ -8,86 +8,17 @@ import './style/style.scss';
 // I denna fil har vi lagrat vår "data"
 import questions from './questionsArray.js';
 
-// I denna fil har vi lagrat vår extra "data"
+// I denna fil har vi lagrat vår extra "data" // Denna fil behövs inte längre /Gabriel
 import extraQuestions from './extraQuestions.js';
 
 //Nedan har vi starta spelfunktionen där vi väljer kategori och skriver in smeknamn
 
 document.querySelector('#startGameBtn').addEventListener('click', startGame);
 
-const categoryOneBtn = document.querySelector('#categoryOne');
-const categoryTwoBtn = document.querySelector('#categoryTwo');
 
+let currentQuestion = 0;
+let points = 0;
 let playerName = '';
-let categoryChoice = '';
-
-document.querySelector('#firstPage').classList.remove('firstPage');
-
-
-function checkCategory() {
-  if(document.getElementById('categoryOne').checked == true) {   
-    categoryChoice = true;
-    console.log('categoriOne');   
-  } else {  
-    categoryChoice = false;
-    console.log('categoriTwo');    
-  }  
-}
-
-shuffle(questions);
-
-//shuffla frågor
-function shuffle(a) {
-  for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-
-//TODO
-
-/**
- * Check av namn och kategori för start av namn
- */
-
-
-// Nedan är det första spelaren möts av. Det är även denna funktion som körs när man trycker på "restartGameBtn"
-
-function startScreen() {
-  //document.getElementById("category").checked = false;
-  gameDescription.style.display = 'block';
-  document.querySelector('#playerDetails').style.display = 'block';
-  document.querySelector('#gameCategories').style.display = 'block';
-  document.querySelector('#gameOver').style.display = 'none';
-  document.querySelector('#questionContainer').style.display = 'none';
-  
-  checkCategory();
-  
-  console.log('startGame');
-  // Spara spelarens nick
-  playerName = document.querySelector('#playerNameInput').value;
-  console.log(playerName);
-}
-
-startScreen();
-
-function startGame() {
- 
-  
-  // Dölj HTML-elementen
-  gameDescription.style.display = 'none';
-  document.querySelector('#playerDetails').style.display = 'none';
-  document.querySelector('#gameCategories').style.display = 'none';
-  document.querySelector('#gameOver').style.display = 'none';
-  document.querySelector('#questionContainer').style.display = 'block';
-
-  // Visa question container
-  document.querySelector('#questionContainer').classList.remove('questionContainer');
-
-  nextQuestion();
-}
 
 //Nedan kommer frågorna och svaren samt poängräkning
 
@@ -104,9 +35,78 @@ answer3Btn.addEventListener('click', checkClickedAnswer);
 answer4Btn.addEventListener('click', checkClickedAnswer);
 nextQuestionBtn.addEventListener('click', checkAnswer);
 
+document.querySelector('#restartGameBtn').addEventListener('click', restartGame);
 
-let currentQuestion = 0;
-let points = 0;
+document.querySelector('#firstPage').classList.remove('firstPage');
+
+shuffle(questions);
+
+//shuffla frågor
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+//Funktion för att välja kategori
+function checkCategory() { 
+  
+  if (document.querySelector('#categoryOne').checked == true){
+    var type = 1,  i;                                  
+    for (i = questions.length - 1; i >= 0; --i) {          
+    if (questions[i].isSecondCategory == true) {
+        questions.splice(i, type);
+    }
+  }
+  console.log("Kategori 1")
+
+  }
+  else if (document.querySelector('#categoryTwo').checked == true){
+    var type2 = 1,  i;                                  
+    for (i = questions.length - 1; i >= 0; --i) {          
+    if (questions[i].isSecondCategory == false) {
+        questions.splice(i, type2);
+    }
+  }
+  console.log("Kategori 2")
+  }
+}
+
+// Nedan är det första spelaren möts av. Det är även denna funktion som körs när man trycker på "restartGameBtn"
+
+function startScreen() {
+  
+  gameDescription.style.display = 'block';
+  document.querySelector('#playerDetails').style.display = 'block';
+  document.querySelector('#gameCategories').style.display = 'block';
+  document.querySelector('#gameOver').style.display = 'none';
+  document.querySelector('#questionContainer').style.display = 'none';
+
+  console.log('startGame');
+  // Spara spelarens nick
+  playerName = document.querySelector('#playerNameInput').value;
+  console.log(playerName);
+}
+
+startScreen();
+
+function startGame() {
+  checkCategory();
+  
+  // Dölj HTML-elementen
+  gameDescription.style.display = 'none';
+  document.querySelector('#playerDetails').style.display = 'none';
+  document.querySelector('#gameCategories').style.display = 'none';
+  document.querySelector('#gameOver').style.display = 'none';
+  document.querySelector('#questionContainer').style.display = 'block';
+
+  // Visa question container
+  document.querySelector('#questionContainer').classList.remove('questionContainer');
+
+  nextQuestion();
+}
+
 
 // Funktion för svarsalternativ
 function checkClickedAnswer(e){
@@ -134,7 +134,7 @@ function nextQuestion() {
     gameOver();
     return;
   }
-
+  
   questionTextDiv.innerHTML = questions[currentQuestion].questionText;
   answer1Btn.innerHTML = questions[currentQuestion].answerOptions[0];
   answer2Btn.innerHTML = questions[currentQuestion].answerOptions[1];
@@ -144,16 +144,16 @@ function nextQuestion() {
   currentQuestion++; // += 1, currentQuestion = currentQuestion + 1;
 }
 
-document.querySelector('#restartGameBtn').addEventListener('click', restartGame);
+//document.querySelector('#restartGameBtn').addEventListener('click', restartGame);
 
 function restartGame() {
+  location.reload();
   document.querySelector('#gameOver').style.display = 'none';
   document.getElementById("categoryOne").checked = false; // Tömmer kategorier vid omstart
   document.getElementById("categoryTwo").checked = false; // Tömmer kategorier vid omstart
   currentQuestion = 0;
   points = 0;
   startScreen();
-
 }
 
 function gameOver() {
