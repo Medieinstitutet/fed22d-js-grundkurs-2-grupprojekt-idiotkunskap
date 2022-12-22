@@ -29,7 +29,7 @@ var questions = [
         'Singapore',
         'Tokyo '
       ],
-      correctAnswer: 'Kuala Lumpur, New York',
+      correctAnswer: 'New York',
       isSecondCategory: false,
   },
   {

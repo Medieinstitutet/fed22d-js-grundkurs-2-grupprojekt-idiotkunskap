@@ -1,5 +1,6 @@
 import './style/style.scss';
 
+
 // I denna fil har vi lagrat vår frågor
 import questions from './questionsArray.js';
 
