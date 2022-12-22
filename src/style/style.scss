@@ -16,6 +16,8 @@
   text-size-adjust: 100%;
 }
 
+
+// ---------- Mobil styling ----------
 main {
   padding: 20px;
 }
@@ -32,14 +34,14 @@ header{
 display: none;
 }
 
-#firstPage{
+.firstPageDiv{
   h1{
     font-family: 'Julius Sans One', sans-serif;
     text-align: center;
     margin-top: 100px;
     font-size: 2.2rem;
   }
-  #gameDescription{
+  .gameDescriptionDiv{
     font-family: 'Jost', sans-serif;
     text-align: center;
     padding: 20px;
@@ -47,73 +49,79 @@ display: none;
     margin-left: 3%;
     margin-right: 3%;
   }
-  #gameCategories {
+  .categories {
     text-align: center;
     display: inline-block;
     margin-top: 15px;
   }
   // Kategori 1 - knapp
-  #categoryOneBtn label {
+  .categoryOneDiv label {
     display: inline-block;
     background-color: rgb(255, 255, 255);
     padding: 15px 30px;
     margin: 10px;
     font-family: sans-serif, Arial;
-    font-size: 16px;
+    font-size: 1rem;
     border: 2px solid #89C6FF;
     float: left;
     margin-left: 8%;
     border-radius: 10px;
   }
   
-  #categoryOneBtn input[type="radio"] {
+  .categoryOneDiv input[type="radio"] {
     opacity: 0;
     position: fixed;
     width: 0;
   }
+
+  .categoryOneDiv input[type="radio"]:checked + label {
+    background-color:#89C6FF;
+    border: 2px solid #89C6FF;
+    box-shadow: 3px 3px 6px #d9d9d9;
+  }
  
-  #categoryOneBtn input[type="radio"]:focus + label {
+  .categoryOneDiv input[type="radio"]:focus + label {
     border: 2px solid #89C6FF;
     box-shadow: 3px 3px 6px #d9d9d9;
     
   }
-  #categoryOneBtn label:hover {
+  .categoryOneDiv label:hover {
     background-color: #89C6FF;
   }
   // Kategori 2 - knapp
-  #categoryTwoBtn label {
+  .categoryTwoDiv label {
     display: inline-block;
     background-color: rgb(255, 255, 255);
     padding: 15px 30px;
     margin: 10px;
     font-family: sans-serif, Arial;
-    font-size: 16px;
+    font-size: 1rem;
     border: 2px solid #FFB774;
     border-radius: 10px; 
   }
-  #categoryTwoBtn input[type="radio"] {
+  .categoryTwoDiv input[type="radio"] {
     opacity: 0;
     position: fixed;
     width: 0;
   }
-  #categoryTwoBtn input[type="radio"]:checked + label {
+  .categoryTwoDiv input[type="radio"]:checked + label {
     background-color:#FFB774;
     border: 2px solid #FFB774;
     box-shadow: 3px 3px 6px #d9d9d9;
   }
-  #categoryTwoBtn input[type="radio"]:focus + label {
+  .categoryTwoDiv input[type="radio"]:focus + label {
     border: 2px solid #FFB774;
     box-shadow: 3px 3px 6px #d9d9d9;
   }
-  #categoryTwoBtn label:hover {
-    background-color: #dfd;
+  .categoryTwoDiv label:hover {
+    background-color: #FFB774;
   }
-  #playerDetails{
+  .player{
     margin-top: 40px;
     margin-left: 20px;
     margin-right: 20px;
   }
-  #startGameBtn{
+  .startGame{
     margin-top: 30px;
     border-radius: 10px;
     padding: 10px 20px;
@@ -124,7 +132,7 @@ display: none;
     color:rgba(26, 26, 26, 0.87);
     font-family: 'Jost', sans-serif;
   }
-  #playerDetails input{
+  .player input{
     width: 100%;
     padding: 15px 10px;
     border-radius: 10px;
@@ -137,33 +145,34 @@ display: none;
 // ----- Frågor -----
 
 
-#questionContainer{
+.questions{
   text-align: center;
-  #questionText{
+  .questionTextDiv{
     font-size: 1.3rem;
     margin-bottom: 30px;
   }
-  #answer1, #answer2, #answer3, #answer4{
+  .answerOption1, .answerOption2, .answerOption3, .answerOption4{
     width: 140px;
     height: 140px;
     margin: 10px;
     border-radius: 10px;
     background-color: #ffffff;
-   
     border: solid 1px #d9d9d9;
   }
 
-  #answer1:hover, #answer2:hover, #answer3:hover, #answer4:hover{
-    background-color: #89C6FF;
+  button:hover{
+    background-color: #e7f3fe;
   }
-  #answer1:checked, #answer2:checked, #answer3:checked, #answer4:checked{
+  button:checked{
+    background-color: #89C6FF;
     box-shadow: 3px 3px 6px #d9d9d9;
   }
-  #answer1:focus, #answer2:focus, #answer3:focus, #answer4:focus{
+  button:focus{
+    background-color: #89C6FF;
     box-shadow: 3px 3px 6px #d9d9d9;
   }
 
-  #nextQuestion{
+  .nextButton{
     margin-top: 30px;
     border-radius: 10px;
     padding: 10px 20px;
@@ -172,8 +181,29 @@ display: none;
     border: 2px solid #89C6FF;
     font-weight: bold;
   }
+  .nextButton:hover{
+    background-color: #89C6FF;
+  }
 }
 
 // ----- Sista sidan -----
 
+// ---------- Webb styling ----------
+
+@media only screen and (min-width: 1024px) {
+  main {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  .firstPageDiv{
+    h1{
+      font-size: 2.6rem;
+    }
+    .gameDescriptionDiv{
+      font-size: 1.2rem;
+    }
+  }
+ 
+
+}
 

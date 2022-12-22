@@ -18,50 +18,50 @@
         <div id="timer"><p>Timer</p></div>
       </header>
       
-      <div id="firstPage" class="firstPage">
+      <div id="firstPage" class="firstPageDiv">
         <h1>Idiotkunskap</h1>
-        <div id="gameDescription">
+        <div id="gameDescription" class="gameDescriptionDiv">
           <p>Det här är spelet om allt det där man inte fick lära sig i skolan. Över 40 totalt meningslösa men ändå
             superintressanta och roliga frågor som är lika kul att kunna svara på som att höra svaret på! Välj en
             kategori, skriv in ett smeknamn och börja spela.</p>
         </div>
       
-        <div id="gameCategories">
-          <div id="categoryOneBtn">
+        <div id="gameCategories" class="categories">
+          <div id="categoryOneBtn" class="categoryOneDiv">
           <input type="radio" name="category" id="categoryOne"></input>
           <label for="categoryOne">Kategori 1</label>
         </div>
-        <div id="categoryTwoBtn">
+        <div id="categoryTwoBtn" class="categoryTwoDiv">
           <input type="radio" name="category" id="categoryTwo"></input>
           <label for="categoryTwo">Kategori 2</label>
         </div>
         </div>
       
-        <div id="playerDetails">
+        <div id="playerDetails" class="player">
           <label>
             Skriv ett smeknamn: <br><input type="text" id="playerNameInput" value="Smeknamn">
           </label><br>
-          <button id="startGameBtn">Starta spelet</button>
+          <button id="startGameBtn" class="startGame">Starta spelet</button>
         </div>
       </div>
       
-      <div id="questionContainer" class="questionContainer">
-        <div id="questionText"></div>
-        <button id="answer1"></button>
-        <button id="answer2"></button><br>
-        <button id="answer3"></button>
-        <button id="answer4"></button><br>
-        <button id="nextQuestion">Svara</button>
+      <div id="questionContainer" class="questions">
+        <div id="questionText" class="questionTextDiv"></div>
+        <button id="answer1" class="answerOption1"></button>
+        <button id="answer2" class="answerOption2"></button><br>
+        <button id="answer3" class="answerOption3"></button>
+        <button id="answer4" class="answerOption4"></button><br>
+        <button id="nextQuestion" class="nextButton">Svara</button>
       </div>
       
       <div id="gameOver" class="lastPage">
-        Tiden är ute!
+        <!-- Tiden är ute! -->
         <p id="pointsContainer">Ditt resultat: </p>
-        <button id="showCorrectAnswers">Visa frågor och svar</button>
+        <!-- <button id="showCorrectAnswers">Visa frågor och svar</button> 
         <div id="scoreBoard">
           <h5>Highscore</h5>
-          <!-- Poänglista från local storage -->
-        </div>
+          Poänglista från local storage 
+        </div> -->
         <p>
           <button id="restartGameBtn">Spela igen</button>
         </p>
