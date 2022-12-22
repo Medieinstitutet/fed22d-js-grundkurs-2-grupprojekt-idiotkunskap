@@ -88,49 +88,60 @@ var questions = [
       isSecondCategory: false,
   },
   {
-      questionText: 'Denna fråga tillhör kategori 2',
+      questionText: 'Vilket år lanserades Post-it lapparna?',
       answerOptions: [
-        '78-2',
-        '88-2',
-        '98-2',
-        '108-2 '
+        '1998',
+        '1978',
+        '1892',
+        '1981'
       ],
-      correctAnswer: '108-2',
+      correctAnswer: '1981',
       isSecondCategory: true,
   },
   {
-      questionText: 'Om detta funkar kommer denna fråga att synas',
+      questionText: 'Vilken färg har den svarta lådan i flygplan?',
       answerOptions: [
-        'Hej',
-        'Kat2',
-        'HejHej',
-        'KatKat2 '
+        'Orange',
+        'Svart',
+        'Röd',
+        'Lila'
       ],
-      correctAnswer: 'Hej',
+      correctAnswer: 'Orange',
       isSecondCategory: true,
   },
   {
-      questionText: 'Kortlek kategori två',
+      questionText: 'Vilket är världens näst vanligaste ord?',
       answerOptions: [
-        '2-78',
-        '2-88',
-        '2-98',
-        '2-108 '
+        'Okej',
+        'Hi',
+        'Look',
+        'Coca-Cola'
       ],
-      correctAnswer: '2-108',
+      correctAnswer: 'Coca-Cola',
       isSecondCategory: true,
-    },
-    {
-      questionText: 'Kortlek kategori två igen då',
+  },
+  {
+      questionText: 'Vilket är världens mest besökta land?',
       answerOptions: [
-        '2-78',
-        '2-88',
-        '2-98',
-        '2-108 '
+        'USA',
+        'Frankrike',
+        'Italien',
+        'Kina'
       ],
-      correctAnswer: '2-88',
+      correctAnswer: 'Frankrike',
       isSecondCategory: true,
-    }
+  },
+  {
+      questionText: 'Vilket är det enda landet i världen utan myggor?',
+      answerOptions: [
+        'Island',
+        'Nya Zeeland',
+        'Israel',
+        'Australien'
+      ],
+      correctAnswer: 'Island',
+      isSecondCategory: true,
+  },
               
 ];
 
