@@ -1,13 +1,14 @@
 var questions = [
   {
-      questionText: 'Vilket djur har den längsta tungan i förhållande till sin kroppslängd?',
-      answerOptions: [
-        'Kameleont',
-        'Myrslok',
-        'Solbjörn',
-        'Kolibri '
-      ],
-      correctAnswer: 'Kameleont',
+    questionText: 'Vilket djur har den längsta tungan i förhållande till sin kroppslängd?',
+    answerOptions: [
+      'Kameleont',
+      'Myrslok',
+      'Solbjörn',
+      'Kolibri '
+    ],
+    correctAnswer: 'Kameleont',
+    isSecondCategory: false,
   },
   {
       questionText: 'Vilket land kommer lyckokakor ursprungligen ifrån?',
@@ -18,6 +19,7 @@ var questions = [
         'Thailand '
       ],
       correctAnswer: 'USA',
+      isSecondCategory: false,
   },
   {
       questionText: 'Vilka städer förknippas med Twin Towers?',
@@ -28,6 +30,7 @@ var questions = [
         'Tokyo '
       ],
       correctAnswer: 'Kuala Lumpur, New York',
+      isSecondCategory: false,
   },
   {
       questionText: 'Hur mycket sparade American Airlines per år på att plockabort en oliv från varje sallad som serverades ombord?',
@@ -38,6 +41,7 @@ var questions = [
         '365.813kr '
       ],
       correctAnswer: '1.000.000kr',
+      isSecondCategory: false,
   },  
   {
       questionText: 'Vilken stad ligger längst söderut?',
@@ -48,6 +52,7 @@ var questions = [
         'Reykjavik '
       ],
       correctAnswer: 'New York',
+      isSecondCategory: false,
   },
   {
       questionText: 'Vad kostar ett barn sammanlagt under de första 18 åren?',
@@ -58,6 +63,7 @@ var questions = [
         'Ca 1.500.000kr '
       ],
       correctAnswer: 'Ca 1.000.000kr',
+      isSecondCategory: false,
   },
   {
       questionText: 'Hur många människor i världen fyller år på samma dag som du?',
@@ -68,6 +74,7 @@ var questions = [
         'Ca 21.000.000 '
       ],
       correctAnswer: 'Ca 19.000.000',
+      isSecondCategory: false,
   },         
   {
       questionText: 'Hur många kort finns det i en Uno-kortlek?',
@@ -78,7 +85,53 @@ var questions = [
         '108 '
       ],
       correctAnswer: '108',
-  }           
+      isSecondCategory: false,
+  },
+  {
+      questionText: 'Denna fråga tillhör kategori 2',
+      answerOptions: [
+        '78-2',
+        '88-2',
+        '98-2',
+        '108-2 '
+      ],
+      correctAnswer: '108-2',
+      isSecondCategory: true,
+  },
+  {
+      questionText: 'Om detta funkar kommer denna fråga att synas',
+      answerOptions: [
+        'Hej',
+        'Kat2',
+        'HejHej',
+        'KatKat2 '
+      ],
+      correctAnswer: 'Hej',
+      isSecondCategory: true,
+  },
+  {
+      questionText: 'Kortlek kategori två',
+      answerOptions: [
+        '2-78',
+        '2-88',
+        '2-98',
+        '2-108 '
+      ],
+      correctAnswer: '2-108',
+      isSecondCategory: true,
+    },
+    {
+      questionText: 'Kortlek kategori två igen då',
+      answerOptions: [
+        '2-78',
+        '2-88',
+        '2-98',
+        '2-108 '
+      ],
+      correctAnswer: '2-88',
+      isSecondCategory: true,
+    }
+              
 ];
 
 
