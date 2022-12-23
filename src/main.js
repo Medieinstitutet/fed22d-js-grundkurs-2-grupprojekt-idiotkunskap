@@ -2,7 +2,7 @@ import './style/style.scss';
 
 
 // I denna fil har vi lagrat vår frågor
-import questions from './questionsArray.js';
+import allQuestions from './questionsArray.js';
 
 //Nedan har vi starta-spel funktionen där vi väljer kategori och skriver in smeknamn
 document.querySelector('#startGameBtn').addEventListener('click', startGame);
@@ -11,6 +11,8 @@ document.querySelector('#startGameBtn').addEventListener('click', startGame);
 let currentQuestion = 0;
 let points = 0;
 let playerName = '';
+var questions = [...allQuestions];
+
 
 //Nedan kommer frågorna och svaren
 const questionTextDiv = document.querySelector('#questionText');
@@ -30,12 +32,10 @@ document.querySelector('#restartGameBtn').addEventListener('click', restartGame)
 document.querySelector('#firstPage').classList.remove('firstPage');
 
 //Funktion för att blanda frågorna
-shuffle(questions);
-
 function shuffle(a) {
   for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
 }
@@ -43,23 +43,18 @@ function shuffle(a) {
 //Funktion för att välja kategori
 function checkCategory() { 
   if (document.querySelector('#categoryOne').checked == true){
-    var type = 1,  i;                                  
-    for (i = questions.length - 1; i >= 0; --i) {          
-    if (questions[i].isSecondCategory == true) {
-        questions.splice(i, type);
-    }
-  }
-  console.log("Kategori 1")
-
+    var questions1 = questions.filter(function(catOneQuestions){
+      return catOneQuestions.isSecondCategory == false;
+    });
+    questions = questions1;
+    shuffle(questions);
   }
   else if (document.querySelector('#categoryTwo').checked == true){
-    var type2 = 1,  i;                                  
-    for (i = questions.length - 1; i >= 0; --i) {          
-    if (questions[i].isSecondCategory == false) {
-        questions.splice(i, type2);
-    }
-  }
-  console.log("Kategori 2")
+    var questions2 = questions.filter(function(catTwoQuestions){
+      return catTwoQuestions.isSecondCategory == true;
+    });
+    questions = questions2;
+    shuffle(questions);
   }
 }
 
@@ -71,7 +66,6 @@ function startScreen() {
   document.querySelector('#gameOver').style.display = 'none';
   document.querySelector('#questionContainer').style.display = 'none';
 
-  console.log('startGame');
   // Spara spelarens nick
   playerName = document.querySelector('#playerNameInput').value;
   console.log(playerName);
@@ -90,7 +84,6 @@ function startGame() {
   
   // Visa question container
   document.querySelector('#questionContainer').classList.remove('questionContainer');
-  
   checkCategory();
   nextQuestion();
 }
@@ -127,7 +120,7 @@ function nextQuestion() {
 
 //Funktion för att starta om spelet efter att spelaren klickat på "Spel igen"
 function restartGame() {
-  location.reload(); //Återställer "questions" array vid omstart
+  questions = allQuestions; //Återställer frågorna inför val av kategori
   document.querySelector('#gameOver').style.display = 'none';
   document.getElementById("categoryOne").checked = false; //Tömmer kategorier vid omstart
   document.getElementById("categoryTwo").checked = false; //Tömmer kategorier vid omstart
