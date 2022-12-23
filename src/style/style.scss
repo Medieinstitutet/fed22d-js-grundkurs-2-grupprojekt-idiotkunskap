@@ -51,8 +51,12 @@ display: none;
   }
   .categories {
     text-align: center;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     margin-top: 15px;
+    & > div {
+      min-width: 200px;
+    }
   }
   // Kategori 1 - knapp
   .categoryOneDiv label {

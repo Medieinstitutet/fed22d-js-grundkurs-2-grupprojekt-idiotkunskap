@@ -60,11 +60,12 @@ function checkCategory() {
 
 // Nedan är det första spelaren möts av. Det är även denna funktion som körs när man trycker på "restartGameBtn"
 function startScreen() {
-  gameDescription.style.display = 'block';
-  document.querySelector('#playerDetails').style.display = 'block';
-  document.querySelector('#gameCategories').style.display = 'block';
-  document.querySelector('#gameOver').style.display = 'none';
-  document.querySelector('#questionContainer').style.display = 'none';
+  document.querySelector('#gameDescription').classList.remove('displayNone');
+  document.querySelector('#playerDetails').classList.remove('displayNone');
+  document.querySelector('#gameOver').classList.add('displayNone');
+  document.querySelector('#questionContainer').classList.add('displayNone');
+  document.querySelector('#categoryOneBtn').classList.remove('displayNone');
+  document.querySelector('#categoryTwoBtn').classList.remove('displayNone');
 
   // Spara spelarens nick
   playerName = document.querySelector('#playerNameInput').value;
@@ -76,14 +77,14 @@ startScreen();
 //Funktion för att starta spelet efter att spelaren matat in smeknamn och valt kategori
 function startGame() {
   // Dölj HTML-elementen
-  gameDescription.style.display = 'none';
-  document.querySelector('#playerDetails').style.display = 'none';
-  document.querySelector('#gameCategories').style.display = 'none';
-  document.querySelector('#gameOver').style.display = 'none';
-  document.querySelector('#questionContainer').style.display = 'block';
+  document.querySelector('#gameDescription').classList.add('displayNone');
+  document.querySelector('#playerDetails').classList.add('displayNone');
+  document.querySelector('#gameOver').classList.add('displayNone');
+  document.querySelector('#categoryOneBtn').classList.add('displayNone');
+  document.querySelector('#categoryTwoBtn').classList.add('displayNone');
   
   // Visa question container
-  document.querySelector('#questionContainer').classList.remove('questionContainer');
+  document.querySelector('#questionContainer').classList.remove('displayNone');
   checkCategory();
   nextQuestion();
 }
@@ -121,7 +122,7 @@ function nextQuestion() {
 //Funktion för att starta om spelet efter att spelaren klickat på "Spel igen"
 function restartGame() {
   questions = allQuestions; //Återställer frågorna inför val av kategori
-  document.querySelector('#gameOver').style.display = 'none';
+  document.querySelector('#gameOver').classList.add('displayNone');
   document.getElementById("categoryOne").checked = false; //Tömmer kategorier vid omstart
   document.getElementById("categoryTwo").checked = false; //Tömmer kategorier vid omstart
   currentQuestion = 0;
@@ -131,7 +132,7 @@ function restartGame() {
 
 //Funktion för att visa "Game Over" skärmen
 function gameOver() {
-  document.querySelector('#gameOver').style.display = 'block';
+  document.querySelector('#gameOver').classList.remove('displayNone');
   document.querySelector('#pointsContainer').innerHTML = `Du fick ${points} poäng!`;
-  document.querySelector('#questionContainer').style.display = 'none';
+  document.querySelector('#questionContainer').classList.add('displayNone');
 }
