@@ -1,4 +1,4 @@
-var questions = [
+var allQuestions = [
   {
     questionText: 'Vilket djur har den längsta tungan i förhållande till sin kroppslängd?',
     answerOptions: [
@@ -146,4 +146,4 @@ var questions = [
 ];
 
 
-export default questions;
+export default allQuestions;
