@@ -22,14 +22,14 @@ var allQuestions = [
       isSecondCategory: false,
   },
   {
-      questionText: 'Vilka städer förknippas med Twin Towers?',
+      questionText: 'Vilken stad förknippas med Twin Towers?',
       answerOptions: [
         'Kuala Lumpur ',
-        'New York',
+        'Stockholm',
         'Singapore',
         'Tokyo '
       ],
-      correctAnswer: 'New York',
+      correctAnswer: 'Kuala Lumpur',
       isSecondCategory: false,
   },
   {
