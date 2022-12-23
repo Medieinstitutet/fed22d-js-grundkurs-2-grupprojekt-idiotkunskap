@@ -1,43 +1,73 @@
 <!DOCTYPE html>
-<html lang="en"> <!-- TODO: glöm ej att byta språk här -->
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/ico" href="/fed22d-js-grundkurs-2-grupprojekt-idiotkunskap/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&family=Julius+Sans+One&display=swap" rel="stylesheet">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projekt</title>
-    <script type="module" crossorigin src="/fed22d-js-grundkurs-2-grupprojekt-idiotkunskap/assets/index.288365a0.js"></script>
-    <link rel="stylesheet" href="/fed22d-js-grundkurs-2-grupprojekt-idiotkunskap/assets/index.09951560.css">
+    <title>Idiotkunskap</title>
+    <script type="module" crossorigin src="/fed22d-js-grundkurs-2-grupprojekt-idiotkunskap/assets/index.e47e9b92.js"></script>
+    <link rel="stylesheet" href="/fed22d-js-grundkurs-2-grupprojekt-idiotkunskap/assets/index.f7d449a3.css">
   </head>
   <body>
     <main>
-      <div class="app" id="app"></div> <!-- TODO: går bra att radera -->
-      <!-- TODO: skriv din kod här, innan script-taggen -->
-
-      <h1>Quiz</h1>
-      <div id="gameDescription"></div>
       
-      <div id="playerDetails">
-        <label>
-          Ditt namn: <input type="text" id="playerNameInput" value="Jenni">
-        </label>
-        <button id="startGameBtn">Starta spelet</button>
+      <header id="header">
+        <h4>Idiotkunskap</h4>
+        <div id="timer"><p>Timer</p></div>
+      </header>
+      
+      <div id="firstPage" class="firstPageDiv" class="displayNone">
+        <h1>Idiotkunskap</h1>
+        <div id="gameDescription" class="gameDescriptionDiv">
+          <p>Det här är spelet om allt det där man inte fick lära sig i skolan. Över 40 totalt meningslösa men ändå
+            superintressanta och roliga frågor som är lika kul att kunna svara på som att höra svaret på! Välj en
+            kategori, skriv in ett smeknamn och börja spela.</p>
+        </div>
+      
+        <div id="gameCategories" class="categories" class="displayNone">
+          <div id="categoryOneBtn" class="categoryOneDiv">
+          <input type="radio" name="category" id="categoryOne"></input>
+          <label for="categoryOne">Kategori 1</label>
+        </div>
+        <div id="categoryTwoBtn" class="categoryTwoDiv">
+          <input type="radio" name="category" id="categoryTwo"></input>
+          <label for="categoryTwo">Kategori 2</label>
+        </div>
+        </div>
+      
+        <div id="playerDetails" class="player" class="displayNone">
+          <label>
+            Skriv ett smeknamn: <br><input type="text" id="playerNameInput" value="">
+          </label><br>
+          <button id="startGameBtn" class="startGame">Starta spelet</button>
+        </div>
       </div>
       
-      <div id="questionContainer">
-        <div id="questionText"></div>
-        <button id="answer1"></button>
-        <button id="answer2"></button>
-        <button id="answer3"></button>
+      <div id="questionContainer" class="questions" class="displayNone">
+        <div id="questionText" class="questionTextDiv"></div>
+        <button id="answer1" class="answerOption1"></button>
+        <button id="answer2" class="answerOption2"></button><br>
+        <button id="answer3" class="answerOption3"></button>
+        <button id="answer4" class="answerOption4"></button><br>
+        <button id="nextQuestion" class="nextButton">Svara</button>
       </div>
       
-      <div id="gameOver" class="hidden">
-        Spelet är slut!
-        <p id="pointsContainer"></p>
+      <div id="gameOver" class="lastPage" class="displayNone">
+        <!-- Tiden är ute! -->
+        <p id="pointsContainer">Ditt resultat: </p>
+        <!-- <button id="showCorrectAnswers">Visa frågor och svar</button> 
+        <div id="scoreBoard">
+          <h5>Highscore</h5>
+          Poänglista från local storage 
+        </div> -->
         <p>
-          <button id="restartGameBtn">Spela igen</button>
+          <button id="restartGameBtn" class="restartBtn">Spela igen</button>
         </p>
       </div>
-    </main>
+      </main>
 
     <!-- TODO
     - Validera HTML (kopiera den renderade HTML-koden): https://validator.w3.org/#validate_by_input
